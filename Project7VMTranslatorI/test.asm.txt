@@ -1,0 +1,44 @@
+// Virtual Machine instruction to Hack assembly sequence test frame.
+// Copy your Hack assembly code down below and single step this program
+// with the CPUEmulator to test that your Hack assembly is the correct
+// translation of a given single Virtual Machine instruction.
+
+// For a complete test, run a second time with the stack base and any
+// segment bases used moved to different memory address.
+
+// Establish the stack base at address 24 and simulate the following two
+// virtual machine instructions:
+//    push constant 42
+//    push constant 220
+
+@42 // simulate push constant 42
+D=A
+@24
+M=D
+
+@220 // simulate push constant 220
+D=A
+@25
+M=D
+
+@26 // set SP to 26
+D=A
+@SP
+M=D
+
+// Set any needed segment registers here, as needed.  Ensure that 
+// segments don't overlap.  Remember that the static segement starts
+// at address 16.
+// Example: set LCL base to 32
+@32
+D=A
+@LCL
+M=D
+
+// Put your Hack assembly code here.
+
+
+// Infinite loop
+(__END)
+@__END
+0;JMP
